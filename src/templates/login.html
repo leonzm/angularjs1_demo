@@ -1,0 +1,28 @@
+<div class="login-box">
+    <div class=" container " style="overflow: hidden;">
+        <div class="login-form">
+            <div class="card card-container">
+                <img id="profile-img" class="profile-img-card" src="/resources/imgs/login.jpg"/>
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin" novalidate>
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="邮件地址" required autofocus
+                           ng-disabled="login.reqProcessing"
+                           ng-model="login.user.email">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="密码" required
+                           ng-disabled="login.reqProcessing"
+                           ng-model="login.user.password">
+
+                    <button class="btn btn-lg btn-primary btn-block btn-signin"
+                            ng-disabled="login.reqProcessing"
+                            ng-click="login.auth()">登录
+                    </button>
+
+                </form>
+                <a class="forgot-password" ng-click="login.forget()">忘记密码</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="forgot-password" ng-click="login.register()">注册</a>
+            </div>
+        </div>
+    </div>
+</div>

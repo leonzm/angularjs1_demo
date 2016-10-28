@@ -1,0 +1,29 @@
+<div class="content">
+    <div class="authorized-box">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a ui-sref-active="active" ui-sref="authorized.weatherQuery" class="list-group-item">天气查询</a>
+                        <a ui-sref-active="active" ui-sref="authorized.proxyApi" class="list-group-item">代理演示</a>
+                        <a ui-sref-active="active" ui-sref="authorized.bootstrap" class="list-group-item">插件演示</a>
+                        <a ui-sref-active="active" ui-sref="authorized.accout" class="list-group-item">账户管理</a>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">欢迎来到主页 | <a ui-sref-active="active" ui-sref="login">退出</a></div>
+                        <div class="panel-body" style="min-height: 400px">
+                            <div ui-view="authorized-content"></div>
+                        </div>
+                        <div class="panel-footer text-right">
+                            Copyright &copy; 906998248@qq.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

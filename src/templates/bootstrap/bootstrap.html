@@ -1,0 +1,86 @@
+<div class="row">
+
+    <div class="col-md-12">
+        <h3>位置信息
+            <small>positionX positionY type</small>
+        </h3>
+    </div>
+
+    <div class="col-md-4">
+        <h4>通知水平位置</h4>
+        <div class="btn-group">
+            <label class="btn btn-success"
+                   ng-model="uiBootstrap.notificationConfig.positionX"
+                   ng-repeat="positionX in  uiBootstrap.notificationOpts['NOTIFICATION_HORIZONTAL']"
+                   uib-btn-radio="positionX"
+                   ng-bind="positionX.label"></label>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h4>通知垂直位置</h4>
+        <div class="btn-group">
+            <label class="btn btn-success"
+                   ng-model="uiBootstrap.notificationConfig.positionY"
+                   ng-repeat="positionY in  uiBootstrap.notificationOpts['NOTIFICATION_VERTICAL']"
+                   uib-btn-radio="positionY"
+                   ng-bind="positionY.label"></label>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h4>通知类型</h4>
+        <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button id="single-button"
+                    type="button"
+                    class="btn btn-default" uib-dropdown-toggle
+                    ng-disabled="disabled">
+                {{uiBootstrap.notificationConfig.type.label}}
+                <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li class="bg-{{type.key}}"
+                    role="menuitem"
+                    ng-repeat="type in  uiBootstrap.notificationOpts['NOTIFICATION_TYPE']">
+                    <a ng-bind="type.label" ng-click="uiBootstrap.notificationConfig.type = type;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="col-md-12">
+        <h3>消息内容
+            <small>title message</small>
+        </h3>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">标题：</div>
+                <input class="form-control" type="text" ng-model="uiBootstrap.notificationConfig.title">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">内容：</div>
+                <input class="form-control" type="text" ng-model="uiBootstrap.notificationConfig.message">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <button type="button" class="btn btn-primary" ng-click="uiBootstrap.showNotification()">显示通知</button>
+    </div>
+
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            {{uiBootstrap.notificationConfig}}
+        </div>
+    </div>
+</div>
