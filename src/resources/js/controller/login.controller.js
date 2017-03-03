@@ -69,7 +69,7 @@
                 }
 
                 vm.reqProcessing = false;
-            }, 2000);
+            }, 100); // 2000
         }
 
     }

@@ -24,14 +24,15 @@
 
         function getCaptcha() {
             var queryUrl = 'devPlatform/rest/common/captcha';
-            $http.get(queryUrl)
-                .success(function (resp) {
-                    vm.captchaInfo = resp.data;
-                    console.log(vm.captchaInfo);
-                })
-                .error(function (data) {
+            $http({
+                method: 'GET',
+                url: queryUrl,
+            }).then(function successCallback(response) {
+                vm.captchaInfo = response.data;
+                console.log(vm.captchaInfo);
+            },function errorCallback(response) {
 
-                })
+            });
         }
 
 

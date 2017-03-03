@@ -56,7 +56,7 @@
                 vm.user.reg_password == '';
 
                 vm.reqProcessing = false;
-            }, 1000);
+            }, 100);
         }
     }
 })(angular);

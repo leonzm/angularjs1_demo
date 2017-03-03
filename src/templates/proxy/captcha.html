@@ -1,8 +1,8 @@
 <div class="row">
 
     <div class="col-md-6">
-        <img ng-src="data:image/jpeg;base64,{{proxy.captchaInfo.base64Img}}">
-        {{proxy.captchaInfo.token}}
+        <img ng-src="data:image/jpeg;base64,{{proxy.captchaInfo.data.base64Img}}" />
+        {{proxy.captchaInfo.data.token}}
     </div>
     <div class="col-md-6">
         <button type="button" class="btn btn-default" ng-click="proxy.getCaptcha()">

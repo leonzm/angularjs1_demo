@@ -24,16 +24,18 @@
         }
 
         function query() {
-            //var queryUrl = 'http://wthrcdn.etouch.cn/weather_mini?city=上海';
-            var queryUrl = 'http://apis.baidu.com/thinkpage/weather_api/suggestion?language=zh-Hans&unit=c&start=0&days=3&location=' + vm.searchKey;
-            $http.get(queryUrl, {headers: {'apikey': 'aa2a332d940d02c27e1cbe89c14009a8'}})
-                .success(function (resp) {
-                    vm.queryResult = resp['results'][0]
-                    console.log(resp);
-                })
-                .error(function (data) {
+            var queryUrl = 'http://wthrcdn.etouch.cn/weather_mini?city=上海';
+            //var queryUrl = 'http://apis.baidu.com/thinkpage/weather_api/suggestion?language=zh-Hans&unit=c&start=0&days=3&location=' + vm.searchKey;
+            $http({
+                method: 'GET',
+                url: queryUrl,
+                headers: {'apikey': 'aa2a332d940d02c27e1cbe89c14009a8'}
+            }).then(function successCallback(response) {
+                vm.queryResult = response['results'][0]
+                console.log(response);
+            },function errorCallback(response) {
 
-                })
+            });
         }
 
 
