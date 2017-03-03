@@ -246,9 +246,13 @@ gulp.task('serve', ['src-inject'], function () {
     console.log(util.env.env === 'pro' ? "PRODUCTION" : "DEV");
     console.log("======================");
 
+    // 天气演示的proxy
+    var wetherProxyApi = url.parse('http://wthrcdn.etouch.cn/weather_mini');
+    wetherProxyApi.route = '/weather_mini';
+    // 代理演示的proxy
     var proxyApi = url.parse('https://dev.juxinli.com/devPlatformApi');
     proxyApi.route = '/devPlatform';
-    var middleware = [proxy(proxyApi)];
+    var middleware = [proxy(wetherProxyApi), proxy(proxyApi)];
     // var middleware = [];
     var baseServerOpts = {
         server: {

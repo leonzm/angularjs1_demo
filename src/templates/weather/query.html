@@ -12,18 +12,18 @@
 <div ng-if="weatherQuery.queryResult" class="row">
     <div class="col-md-12">
         <div>
-            <h3>当前查询的城市为: <span class="label label-default" ng-bind="weatherQuery.queryResult.location.name"></span></h3>
+            <h3>当前查询的城市为: <span class="label label-default" ng-bind="weatherQuery.queryResult.data.city"></span></h3>
         </div>
     </div>
 
-    <div class="col-md-4 text-center weather-query-item" ng-repeat="daily in weatherQuery.queryResult.daily">
+    <div class="col-md-4 text-center weather-query-item" ng-repeat="foreca in weatherQuery.queryResult.data.forecast">
         <div class="weather-query-item-box">
             <ul class="list-group text-left">
-                <li class="list-group-item">查询日期<span class="badge" ng-bind="daily.date"></span></li>
-                <li class="list-group-item">最高温度<span class="badge" ng-bind="daily.high"></span></li>
-                <li class="list-group-item">最低温度<span class="badge" ng-bind="daily.low"></span></li>
-                <li class="list-group-item">白天天气<span class="badge" ng-bind="daily.text_day"></span></li>
-                <li class="list-group-item">晚间天气<span class="badge" ng-bind="daily.text_night"></span></li>
+                <li class="list-group-item">查询日期<span class="badge" ng-bind="foreca.date"></span></li>
+                <li class="list-group-item">最高温度<span class="badge" ng-bind="foreca.high"></span></li>
+                <li class="list-group-item">最低温度<span class="badge" ng-bind="foreca.low"></span></li>
+                <li class="list-group-item">天气类型<span class="badge" ng-bind="foreca.type"></span></li>
+                <li class="list-group-item">风向<span class="badge" ng-bind="foreca.fengxiang"></span></li>
             </ul>
         </div>
     </div>
