@@ -1,5 +1,6 @@
 .idea
 .idea/*
+build
 src/lib
 src/lib/*
 node_modules
