@@ -49,7 +49,7 @@ var srcPath = {
     ],
     html: ['src/index-origin.html'],
     template: ['src/templates/**/*.html', 'src/resources/js/component/**/*.html'],
-    images: ['src/resources/img/**/*'],
+    images: ['src/resources/imgs/**/*'],
     favicon: ['src/favicon.ico'],
     temporary: ['src/sample/**/*.json'],
     output: ['build/'],
@@ -127,7 +127,7 @@ gulp.task('clean', function () {
 
 
 gulp.task('image', function () {
-    gulp.src(srcPath.images).pipe(imagemin()).pipe(gulp.dest('build/resources/img/'));
+    gulp.src(srcPath.images).pipe(imagemin()).pipe(gulp.dest('build/resources/imgs/'));
     gulp.src(srcPath.favicon).pipe(gulp.dest('build/'));
 });
 
