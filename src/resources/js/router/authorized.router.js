@@ -51,6 +51,16 @@
                     }
                 }
             })
+            .state('authorized.upload', {
+                url: '/upload',
+                views: {
+                    'authorized-content': {
+                        templateUrl: 'templates/upload/upload.html',
+                        controller: 'UploadController',
+                        controllerAs: 'upload'
+                    }
+                }
+            })
 
     }
 })(angular);
